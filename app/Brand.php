@@ -5,11 +5,11 @@ namespace App;
 
 class Brand 
 {
-    protected string $brandName;
+    public string $brandName;
 
-    //   public function __construct(string $brandName)
-    // {
-    //     $this->name = $brandName;
-    // }
+    public function __construct(string $brandName)
+    {
+        $this->brandName = $brandName;
+    }
 
 }

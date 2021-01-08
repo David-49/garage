@@ -2,23 +2,45 @@
 
 namespace App;
 
-use DateTime;
+// use DateTime;
 
 class Car extends Vehicle implements Article
 {
     protected int $odometer;
-    protected DateTime $productionYear;
+    protected int $productionYear;
     protected string $popularity;
 
-    public function __construct(int $odometer, DateTime $productionYear, string $name, int $price, Brand $brandName)
+    public function __construct(Brand $brand, string $name, int $productionYear, int $price, int $odometer )
     {
-        // $this->odometer = $odometer;
-        // $this->productionYear = $productionYear;
-        // $this->name = $name;
-        // $this->price = $price;
-        // $this->brand = $brand;
-        parent::__construct($odometer, $productionYear, $name, $price, $brandName);
+        $this->brand = $brand;
+        $this->name = $name;
+        $this->productionYear = $productionYear;
+        $this->price = $price;
+        $this->odometer = $odometer;
+        // parent::__construct($odometer, $productionYear, $name, $price, $brandName);
     }
+
+    public function giveOdometer(): int
+    {
+        return $this->odometer;
+    }
+
+    public function giveName(): string
+    {
+        return $this->name;
+    }
+
+    public function giveProducionYear(): int
+    {
+        return $this->productionYear;
+    }
+
+    public function givePriceBefore(): int
+    {
+        return $this->price;
+    }
+
+
 
     public function calcWearLevel(): int 
     {
@@ -36,11 +58,12 @@ class Car extends Vehicle implements Article
 
     public function givePrice(): int 
     {
-       return $price / $this->calcWearLevel();
+       return $this->price / $this->calcWearLevel();
     }
 
     public function giveDenomination(): string 
     {
-      return $this->brand.''.$this->name;
+      return $this->brand->brandName.' '.$this->name;
     }
 }
+
