@@ -10,7 +10,7 @@ require __DIR__.'/../vendor/autoload.php';
 $brandName = new Brand('Peugeot');
 dump($brandName);
 
-$utility = new Utility($brandName, 'Boxer 2', 150000, 14);
+$utility = new Utility($brandName, 'Boxer 2', 16000, 150000, 14);
 dump($utility);
 
 $car = new Car($brandName , '206', 2002, 2000000, 500);

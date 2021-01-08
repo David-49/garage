@@ -17,7 +17,6 @@ class Car extends Vehicle implements Article
         $this->productionYear = $productionYear;
         $this->price = $price;
         $this->odometer = $odometer;
-        // parent::__construct($odometer, $productionYear, $name, $price, $brandName);
     }
 
     public function giveOdometer(): int
@@ -49,7 +48,7 @@ class Car extends Vehicle implements Article
 
     public function givePopularity(): string 
     {
-        if ($this->produciotnYear > 2010) {
+        if ($this->productionYear > 2010) {
             return $this->popularity = "Bonne";
         } else {
             return $this->popularity = "Mauvaise";

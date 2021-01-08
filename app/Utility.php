@@ -9,12 +9,18 @@ class Utility extends Vehicle implements Article
     protected int $volume;
     protected string $popularity;
 
-    public function __construct(Brand $brand, string $name, int $odometer, int $volume)
+    public function __construct(Brand $brand, string $name, int $price, int $odometer, int $volume)
     {
         $this->brand = $brand;
         $this->name = $name;
+        $this->price = $price;
         $this->odometer = $odometer;
         $this->volume = $volume;
+    }
+
+    public function givePriceBefore(): int
+    {
+        return $this->price;
     }
 
     public function giveOdometer(): int
